@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="shortcut icon" href="icon.ico" />
+		<title>易存云盘</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<!-- 微云主体 -->
+		<div class="wrap">
+			<!-- 默认头部 -->
+			<div class="header clear">
+				<h1 id="logo"></h1>
+				<a href="javascript:;" id="back"></a>
+				<form id="search">
+					<input type="text" placeholder="输入文件名" />
+					<a class="search-icon"></a>
+				</form>
+				<div id="view">
+					<a href="javascript:;" ></a>
+					<a href="javascript:;" class="active"></a>
+				</div>
+				<div id="sort">
+					<a href="javascript:;" class=""></a>
+					<a href="javascript:;"></a>
+				</div>
+				<div id="add">
+					<span>添加</span>
+					<ul>
+						<img src="img/add_bg.png" />
+						<li class="up"><a href="javascript:;" style="position: relative; overflow: hidden;">上传文件<input type="file" value="浏览" style="position: absolute; top: 0; width: 105px; height: 133px; left: 0; font-size: 100px; opacity: 0;" accept="application/msexcel,application/msword,application/vnd.ms-powerpoint,image/png,image/jpeg,audio/mpeg,audio/mp4,text/plain" /></a></li>												
+						<li class="crea"><a href="javascript:;">创建文件夹</a></li>
+						<li class="note"><a href="javascript:;">添加笔记</a></li>
+					</ul>
+				</div>	
+			</div>
+			<!-- 默认头部结束 -->
+			<div id="upload">
+				<div id="total">
+					<div id="loaded"></div>
+					<span>0%</span>
+				</div>
+				<p>正在上传</p>
+			</div>
+			<!-- 主内容区 -->
+			<div id="con" class="clear">
+				<!-- 左侧 -->
+				<div class="left">
+					<!-- 左侧用户头像 -->
+					<div class="l_Top">
+						<div class="user-icon">
+							<p>
+								<a href="javascript:;"><img src="img/jay.jpg" /></a>
+							</p>
+						</div>
+					</div>
+					<!-- 左侧导航 -->
+					<div id="files">
+						<!-- 左侧边栏导航内容 -->
+						<div id="files_con">
+							<a href="javascript:;" class="now" id="near">
+								<span></span>
+								<span>最近</span>
+							</a>
+							<div class="file">
+								<h3>文件</h3>
+								<a href="javascript:;" class="now active2" id="whole">
+									<span></span>
+									<span>全部</span>
+								</a>
+								<a href="javascript:;" class="now" id="document">
+									<span></span>
+									<span>文档</span>
+								</a>
+								<a href="javascript:;" class="now" id="image">
+									<span></span>
+									<span>图片</span>
+								</a>
+								<a href="javascript:;" class="now" id="video">
+									<span></span>
+									<span>视频</span>
+								</a>
+								<a href="javascript:;" class="now" id="music">
+									<span></span>
+									<span>音乐</span>
+								</a>
+								<a href="javascript:;" class="now" id="note">
+									<span></span>
+									<span>笔记</span>
+								</a>	
+								<h3>照片</h3>
+								<a href="javascript:;" class="now" id="pic">
+									<span></span>
+									<span>时间</span>
+								</a>
+								<h3>我的</h3>
+								<a href="javascript:;" class="now" id="recycle">
+									<span></span>
+									<span>回收站</span>
+								</a>
+							</div>
+						</div>
+						<!-- 左侧滚动条 -->
+						<div id="scrol_box">
+							<div id="slide"></div>
+						</div>
+					</div>					
+				</div>
+				<!-- 右侧 -->
+				<div class="right">
+					<!-- 右侧头部显示区 -->
+					<div class="r_Top">
+						<div id="all" class="checkbox">
+							<span></span>
+						</div>
+						<div id="title"><a href="javascript:;">易存</a></div>
+					</div>
+					<!-- 右侧内容盒子 -->
+					<div id="files2">
+						<!-- 右侧内容 -->
+						<div id="files_con2">
+							<!--<div class="act">
+								<span class="f_bg"></span>
+								<span>我的文件夹</span>
+								<input type="text" />
+								<div class="checkbox">
+									<span></span>
+								</div>
+								<div id="task">
+									<a href="javscript:;"></a>
+									<a href="javscript:;"><span></span>彻底删除</a>
+									<a href="javscript:;"><span></span>还原</a>
+									<a href="javscript:;"><span></span>重命名</a>
+									<a href="javscript:;"><span></span>移动到</a>
+									<a href="javscript:;"><span></span>下载</a>		
+								</div>
+							</div>-->
+						</div>
+						<!-- 右侧区域滚动条 -->
+						<div id="scrol2_box">
+							<div id="slide2"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 主内容结束 -->
+				
+			<!-- 文件选中时头部 -->
+			<div id="select">
+				<h1></h1>
+				<a href="javascript:;">取消选择</a>
+				<p>选择了<span id="num">7</span>项</p>
+				<a href="javascript:;"><span></span>删除</a>
+				<a href="javascript:;"><span></span>还原</a>
+				<a href="javascript:;"><span></span>重命名</a>
+				<a href="javascript:;"><span></span>移动到</a>
+				<a href="javascript:;"><span></span>下载</a>		
+			</div>
+			
+			<!-- 移动文件夹弹出层 -->
+			<div id="move_file">
+				<div class="mask"></div>
+				<div id="M_window">
+					<h3>选择储存位置<a href="javascript:;">x</a></h3>
+					<div id="M_now">
+						<span></span>
+						<p>公众号</p>
+						<i>20k</i>
+					</div>
+					<div class="M_move">
+						<h4>移动到：</h4>
+						<div  class="catalog">
+							<span></span><h2>易存
+							<ul id="catalog">
+							</ul>
+						</h2>
+					</div>
+					</div>
+					<a href="javascript:;">取消</a>
+					<a href="javascript:;">确定</a>
+				</div>
+			</div>
+			
+			<!-- 图片点击显示 -->
+			<div id="imgshow">
+				<img src="" />
+				<a href="javascript:;" id="prev"><</a>
+				<a href="javascript:;" id="next">></a>
+				<span>X</span>
+				<p class="showname"></p>
+			</div>
+			
+			<!--音乐点击显示 -->
+			<div id="musicshow">
+				<audio src="music/成都.mp3"></audio>
+				<div class="player">
+					<a href="javascript:;" id="rotate"></a>
+				</div>
+				<div id="process" class="probg">
+					<div class="pro"></div>
+					<div class="proslide"></div>
+				</div>
+				<div class="time" id="time">
+					<span>00:00</span>
+					<span>00:00</span>
+				</div>
+				<div class="volumbg" id="volum">
+					<div class="volum"></div>
+					<div class="volumslide"></div>
+				</div>
+				<div class="play" id="play">
+					<div class="prev"></div>
+					<div class="played"></div>
+					<div class="next"></div>
+				</div>
+				<p class="showname2"></p>
+				<span id="close">X</span>
+			</div>
+			
+			<!-- 顶部提示标签 -->
+			<p id="tip"></p>
+		</div>
+		<!-- 微云主体结束 -->
+		
+		<!-- 外部js调用 -->
+		<script src="js/data.js"></script>	
+		<script src="js/mTween.js"></script>
+		<script src="js/tween.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/pinyin.js"></script>
+		<script src="js/task.js"></script>	
+	</body>	
+</html>
